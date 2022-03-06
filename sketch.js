@@ -89,7 +89,7 @@ function preload(){
 	raftBtnImg = loadImage("assets/raftBtn.png");
 	fireBtnImg = loadImage("assets/fireBtn.png");
 	shelterBtnImg = loadImage("assets/shelterBtn.png");
-	smokeImg = loadAnimation("assets/smoke.gif");
+	//smokeImg = loadAnimation("assets/smoke.gif");
 	fireImg = loadAnimation("assets/fire.gif");
 	shelterImg = loadAnimation("assets/shelter.png");
 	raftImg = loadAnimation("assets/raft.png");
@@ -157,7 +157,7 @@ function setup() {
 
 	fireWoodBundle = createSprite(width/2 - 400, height/2-100, 10,10);
 	fireWoodBundle.addAnimation("fireWood", woodBundleImg); 
-	fireWoodBundle.addAnimation("smoke1", smokeImg);
+	//fireWoodBundle.addAnimation("smoke1", smokeImg);
 	fireWoodBundle.addAnimation("fire", fireImg);
 	fireWoodBundle.changeAnimation("fireWood");
 	fireWoodBundle.scale = 0.4;
@@ -167,7 +167,7 @@ function setup() {
 
 	shelterWoodBundle = createSprite(width/2, height/2-100, 10,10);
 	shelterWoodBundle.addAnimation("shelterWood", woodBundleImg);
-	shelterWoodBundle.addAnimation("smoke2", smokeImg);
+	//shelterWoodBundle.addAnimation("smoke2", smokeImg);
 	shelterWoodBundle.addAnimation("shelter", shelterImg);
 	shelterWoodBundle.changeAnimation("shelterWood");
 	shelterWoodBundle.scale = 0.4;
@@ -177,7 +177,7 @@ function setup() {
 
 	raftWoodBundle = createSprite(width/2 + 400, height/2-100, 10,10);
 	raftWoodBundle.addAnimation("raftWood", woodBundleImg);
-	raftWoodBundle.addAnimation("smoke3", smokeImg);
+	//raftWoodBundle.addAnimation("smoke3", smokeImg);
 	raftWoodBundle.addAnimation("raft", raftImg)
 	raftWoodBundle.changeAnimation("raftWood");
 	raftWoodBundle.scale = 0.4;
