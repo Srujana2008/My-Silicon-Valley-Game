@@ -23,7 +23,7 @@ function preload(){
 	playerAni = loadAnimation("assets/png/Idle (1).png", "assets/png/Idle (2).png", "assets/png/Idle (3).png", "assets/png/Idle (4).png","assets/png/Idle (5).png", "assets/png/Idle (6).png", "assets/png/Idle (7).png", "assets/png/Idle (8).png","assets/png/Idle (9).png", "assets/png/Idle (10).png")
 	playerRunRightAni = loadAnimation("assets/png/Run (1).png", "assets/png/Run (2).png", "assets/png/Run (3).png", "assets/png/Run (4).png", "assets/png/Run (5).png", "assets/png/Run (6).png", "assets/png/Run (7).png", "assets/png/Run (8).png");
 	playerJumpAni = loadAnimation("assets/png/Jump (1).png", "assets/png/Jump (2).png", "assets/png/Jump (3).png", "assets/png/Jump (4).png", "assets/png/Jump (5).png", "assets/png/Jump (6).png", "assets/png/Jump (7).png", "assets/png/Jump (8).png", "assets/png/Jump (9).png", "assets/png/Jump (10).png");
-	logo_img = loadImage("assets/LOGO.PNG");
+	logo_img = loadImage("assets/LOGO.png");
 	howToPlayBtn = loadImage("assets/howToPlay.png");
 	howToPlaypopup1Img = loadAnimation("assets/howtoplaypopup1.png");
 	howToPlaypopup2Img = loadAnimation("assets/howtoplaypopup2.png");
@@ -310,7 +310,7 @@ function setup() {
 	life.visible = false;
 
 	
-	howToPlaypopup.setCollider("rectangle",900,-420,220,220);
+	howToPlaypopup.setCollider("rectangle",240,-135,70,70);
 
 	//GROUPS
 	waterGrp = new Group();
