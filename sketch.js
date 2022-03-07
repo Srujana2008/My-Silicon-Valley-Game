@@ -4,7 +4,7 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 
 var gameState = "START"
-var waterScore = 0//15;
+var waterScore = 15;
 var woodScore = 0//100;
 var lifeScore = 3;
 var timer = 0;
@@ -196,7 +196,7 @@ function setup() {
 	
 	woods = createSprite(width/2, height/2, 10, 10);
 	woods.addImage(woods2Img);
-	woods.scale = 2.5;
+	woods.scale = 3;
 	woods.visible = false;
 
 	resetBtn = createSprite(width/2, height/2 + 160, 10, 10);
@@ -381,8 +381,8 @@ function gameStart(){
 	
 		if(mousePressedOver(playBtn)){
 			gameState="Level-1-Setup";
-			themesound.play();
-			themesound.setVolume(0.5);
+			/*themesound.play();
+			themesound.setVolume(0.5);*/
 			buttonclicksound.play();
 		}
 		if(mousePressedOver(howToPlay)){
@@ -544,8 +544,8 @@ function gameLevel1WinLose(){
 			if(mousePressedOver(next)){
 				gameState = "Level-2-Setup";
 				buttonclicksound.play();
-				themesound.play();
-				themesound.setVolume(0.5);
+				/*themesound.play();
+				themesound.setVolume(0.5);*/
 			}
 
 			if(mousePressedOver(howToPlay)){
@@ -625,18 +625,18 @@ function gameLevel2(){
 		
 		player.collide(ground);
 
-		if(!keyDown("space")){
+		if(!keyWentDown("space")){
 			player.changeAnimation("moveRight");
 		}
 
-		if(keyDown("space")){
+		if(keyWentDown("space")){
 			player.changeAnimation("jump");
 			player.velocityY = -10;
 			woods.velocityX = -(woodScore+5)/2;
 			jumpsound.play();
 			jumpsound.setVolume(0.3)
 		}  
-		player.velocityY = player.velocityY + 0.8;
+		player.velocityY = player.velocityY + 0.2;
 
 		if(mousePressedOver(howToPlay)){
 			howToPlaypopup.changeAnimation("pop3");
@@ -715,8 +715,8 @@ function gameLevel2WinLose(){
 		if(mousePressedOver(next)){
 			gameState = "FinalScreen";
 			buttonclicksound.play();
-			themesound.play();
-			themesound.setVolume(0.5);
+			/*themesound.play();
+			themesound.setVolume(0.5);*/
 		}
 
 		if(mousePressedOver(howToPlay)){
@@ -974,6 +974,7 @@ function woodScoreSystem(){
 		//player.x = player.x + 10;
 		woodScore = woodScore + 1;
 		enemysound.play();
+		enemysound.setVolume(0.5);
 
 }	
 	}
@@ -986,6 +987,7 @@ function woodScoreSystem(){
 		   //player.x = player.x + 10;
 		   woodScore = woodScore + 1;
 		   enemysound.play();
+		   enemysound.setVolume(0.5);
    }	
 	   }
 
@@ -997,6 +999,7 @@ function woodScoreSystem(){
 		   //player.x = player.x + 10;
 		   woodScore = woodScore + 1;
 		   enemysound.play();
+		   enemysound.setVolume(0.5);
    }	
 	   }
 
@@ -1008,6 +1011,7 @@ function woodScoreSystem(){
 		 //  player.x = player.x + 10;
 		   woodScore = woodScore + 1;
 		   enemysound.play();
+		   enemysound.setVolume(0.5);
    }	
 	   }
 
@@ -1023,7 +1027,6 @@ function woodScoreSystem(){
 		   life.changeAnimation("2life");
 		   life.scale = 0.45;
 		   lifeScore = lifeScore - 1;
-		   //lifeDecreaseSound.play();
 		   lifeDecreaseSound.play();
    }	
 	   }
