@@ -355,7 +355,7 @@ function draw() {
 	finalScreen();
 
 	drawSprites();
-	text(gameState,200,200)
+	//text(gameState,200,200)
 	if(gameState === "Level-1-Instructions" || gameState === "Level-1" || gameState === "Level-1-LOST" || gameState === "Level-1-WIN"){
 	textSize(40);
    	fill("white");
@@ -636,7 +636,7 @@ function gameLevel2(){
 			jumpsound.play();
 			jumpsound.setVolume(0.3)
 		}  
-		player.velocityY = player.velocityY + 0.2;
+		player.velocityY = player.velocityY + 0.5;
 
 		if(mousePressedOver(howToPlay)){
 			howToPlaypopup.changeAnimation("pop3");
@@ -650,8 +650,8 @@ function gameLevel2(){
 		}
 	}
 
-	if(player.y < height/2-230){
-		player.y = height/2-230;
+	if(player.y < height/2-210){
+		player.y = height/2-210;
 	}
 
 }
@@ -831,6 +831,7 @@ function finalScreen(){
 			gameState = "facilityFull";
 			buttonclicksound.play();
 			winSound.play();
+			winSound.setVolume(2);
 			}
 
 			if(mousePressedOver(howToPlay)){
@@ -930,7 +931,7 @@ function spawnTrees(){
 }
 
 function spawnObstacles(){
-	if(frameCount%497==0){
+	if(frameCount%297==0){
 		var obstacle1 = createSprite(width+100,random(height-200, height - 50),10,40);
 		obstacle1.addImage(snakeImg)
 		obstacle1.velocityX = -(6 + 2*woodScore/10);
@@ -941,7 +942,7 @@ function spawnObstacles(){
 		 obstacle1.setCollider("rectangle", 0, 0, 100, 100);
 	}
 
-	if(frameCount%323===0){
+	if(frameCount%413===0){
 		var obstacle2 = createSprite(width+100,random(height-200, height - 50),10,40);
 		obstacle2.addImage(scorpionImg)
 		obstacle2.velocityX = -(6 + 2*woodScore/10);
@@ -952,7 +953,7 @@ function spawnObstacles(){
 		obstacle2.setCollider("rectangle", 0, 0, 100, 100);
 	}
 
-	if(frameCount%575===0){
+	if(frameCount%75===0){
 		var obstacle3 = createSprite(width+100,random(height-200, height - 50),10,40);
 		obstacle3.addImage(lizardImg)
 		obstacle3.velocityX = -(6 + 2*woodScore/10);
